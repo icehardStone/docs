@@ -1,0 +1,11 @@
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\bin\Debug\netcoreapp2.1\ThreadAutoResetEvent.deps.json
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\bin\Debug\netcoreapp2.1\ThreadAutoResetEvent.runtimeconfig.json
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\bin\Debug\netcoreapp2.1\ThreadAutoResetEvent.runtimeconfig.dev.json
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\bin\Debug\netcoreapp2.1\ThreadAutoResetEvent.dll
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\bin\Debug\netcoreapp2.1\ThreadAutoResetEvent.pdb
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\obj\Debug\netcoreapp2.1\ThreadAutoResetEvent.csprojAssemblyReference.cache
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\obj\Debug\netcoreapp2.1\ThreadAutoResetEvent.csproj.CoreCompileInputs.cache
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\obj\Debug\netcoreapp2.1\ThreadAutoResetEvent.AssemblyInfoInputs.cache
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\obj\Debug\netcoreapp2.1\ThreadAutoResetEvent.AssemblyInfo.cs
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\obj\Debug\netcoreapp2.1\ThreadAutoResetEvent.dll
+D:\DocumentPackages\doc\docs\ThreadAutoResetEvent\obj\Debug\netcoreapp2.1\ThreadAutoResetEvent.pdb
