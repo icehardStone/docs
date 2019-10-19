@@ -1,0 +1,11 @@
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\obj\Debug\netcoreapp2.2\ThreadBarrier.csprojAssemblyReference.cache
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\obj\Debug\netcoreapp2.2\ThreadBarrier.csproj.CoreCompileInputs.cache
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\obj\Debug\netcoreapp2.2\ThreadBarrier.AssemblyInfoInputs.cache
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\obj\Debug\netcoreapp2.2\ThreadBarrier.AssemblyInfo.cs
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\bin\Debug\netcoreapp2.2\ThreadBarrier.deps.json
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\bin\Debug\netcoreapp2.2\ThreadBarrier.runtimeconfig.json
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\bin\Debug\netcoreapp2.2\ThreadBarrier.runtimeconfig.dev.json
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\bin\Debug\netcoreapp2.2\ThreadBarrier.dll
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\bin\Debug\netcoreapp2.2\ThreadBarrier.pdb
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\obj\Debug\netcoreapp2.2\ThreadBarrier.dll
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadBarrier\obj\Debug\netcoreapp2.2\ThreadBarrier.pdb

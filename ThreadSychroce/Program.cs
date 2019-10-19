@@ -19,21 +19,32 @@ namespace ThreadSychroce
 
       要打开该程序的另一个版本。
       */
-        const string MutexName = "CSharpThreadingCookBook";
+        private const string MutexName = "MutexName1";
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            using(var m = new Mutex(false, MutexName))
+            using(Mutex m = new Mutex(false,MutexName))
             {
-              if(!m.WaitOne(TimeSpan.FromSeconds(5), false))
+              /**
+              尝试获取信号量，如果五秒之后未获取到，打印Second instance is running 信息，退出操作
+               */
+              if(!m.WaitOne(TimeSpan.FromSeconds(5),false))
               {
-                Console.WriteLine("Second instance is running");
+                /**
+                其他实例正在运行的操作
+                 */
+                 Console.WriteLine("Second instance is runing!");
               }
               else
               {
-                Console.Write("runing！");
-                Console.ReadLine();
+                /**
+                进入当前操作
+                 */
+                Console.WriteLine("Running");
+                string temp =  Console.ReadLine();
+                Console.WriteLine("当前操作:{0}",temp);
+                /**
+                释放信号量
+                 */
                 m.ReleaseMutex();
               }
             }

@@ -1,0 +1,11 @@
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPool.csprojAssemblyReference.cache
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPool.csproj.CoreCompileInputs.cache
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPool.AssemblyInfoInputs.cache
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPool.AssemblyInfo.cs
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPool.deps.json
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPool.runtimeconfig.json
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPool.runtimeconfig.dev.json
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPool.dll
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPool.pdb
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPool.dll
+D:\DevelopmentSoftPackage\DotnetCore\docs\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPool.pdb

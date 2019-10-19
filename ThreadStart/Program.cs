@@ -13,7 +13,16 @@ namespace ThreadStart
             Thread newThread = new Thread(PrintNumber);
             newThread.Start();
             PrintNumber();
-            Thread.Sleep(TimeSpan.FromSeconds(10));
+            //Thread.Sleep(TimeSpan.FromSeconds(10));
+
+
+            string PaperInfo = "页面一";
+            System.Collections.Generic.List<string> data = new System.Collections.Generic.List<string>();
+            data.Add("a");
+            data.Add("b");
+            data.Add("c");
+            Thread PaperInfoThread = new Thread(PrintPaper);
+            PaperInfoThread.Start(data);
         }
         public static void PrintNumber()
         {
@@ -21,6 +30,10 @@ namespace ThreadStart
           {
             Console.Write(i+"*");
           }
+        }
+        public static void PrintPaper(object PaperInfo)
+        {
+          Console.WriteLine(PaperInfo.GetType().FullName);
         }
     }
 }
