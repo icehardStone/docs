@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Chapter 32 MySQL on the OCI Marketplace</title>
+<link rel="stylesheet" href="mvl.css" type="text/css" />
+<meta name="generator" content="DocBook XSL Stylesheets + chunker.py v1.9.2" />
+<link rel="start" href="index.html" title="{book-title}" />
+<link rel="up" href="" title="" />
+<link rel="prev" href="workbench.html" title="Chapter 31 MySQL Workbench" />
+<link rel="next" href="faqs.html" title="Appendix A MySQL 8.0 Frequently Asked Questions" />
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr>
+<th colspan="3" align="center">Chapter 32 MySQL on the OCI Marketplace</th>
+</tr>
+<tr>
+<td width="20%" align="left"><a accesskey="p" href="workbench.html">Prev</a> </td>
+<th width="60%" align="center"></th>
+<td width="20%" align="right"> <a accesskey="n" href="faqs.html">Next</a></td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="chapter">
+<div class="titlepage">
+<div>
+<div>
+<h1 class="title"><a name="mysql-oci-marketplace"></a>Chapter 32 MySQL on the OCI Marketplace</h1>
+
+</div>
+
+</div>
+
+</div>
+<div class="toc">
+<p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="mysql-oci-marketplace.html#mysql-oci-marketplace-prereqs">32.1 Prerequisites to Deploying MySQL EE on Oracle Cloud Infrastructure</a></span></dt><dt><span class="section"><a href="mysql-oci-marketplace.html#mysql-oci-marketplace-deploy">32.2 Deploying MySQL EE on Oracle Cloud Infrastructure</a></span></dt><dt><span class="section"><a href="mysql-oci-marketplace.html#mysql-oci-marketplace-network-configuration">32.3 Configuring Network Access</a></span></dt><dt><span class="section"><a href="mysql-oci-marketplace.html#mysql-oci-marketplace-connecting">32.4 Connecting</a></span></dt><dt><span class="section"><a href="mysql-oci-marketplace.html#mysql-oci-marketplace-maintenance">32.5 Maintenance</a></span></dt></dl>
+</div>
+<p>
+    This chapter describes how to deploy MySQL Enterprise Edition as an
+    Oracle Cloud Infrastructure (OCI) Marketplace Application. This is a
+    BYOL product.
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+
+<div class="admon-title">
+Note
+</div>
+<p>
+      For more information on OCI marketplace, see
+      <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm" target="_top">Overview
+      of Marketplace</a>.
+</p>
+</div>
+<p>
+    The MySQL Enterprise Edition Marketplace Application is an OCI
+    compute instance, running Oracle Linux 7.7, with MySQL EE 8.0. The
+    MySQL EE installation on the deployed image is similar to the RPM
+    installation, as described in
+    <a class="xref" href="installing.html#linux-installation-rpm" title="2.5.4 Installing MySQL on Linux Using RPM Packages from Oracle">Section 2.5.4, “Installing MySQL on Linux Using RPM Packages from Oracle”</a>.
+  </p><p>
+    For more information on MySQL Enterprise Edition, see
+    <a class="xref" href="mysql-enterprise.html" title="Chapter 30 MySQL Enterprise Edition">Chapter 30, <i>MySQL Enterprise Edition</i></a>.
+  </p><p>
+    For more information on MySQL advanced configuration, see
+    <a class="ulink" href="https://dev.mysql.com/doc/mysql-secure-deployment-guide/8.0/en/" target="_top">Secure
+    Deployment Guide</a>.
+  </p><p>
+    For more information on Oracle Linux 7, see
+    <a class="ulink" href="https://docs.oracle.com/en/operating-systems/oracle-linux/7/" target="_top">Oracle
+    Linux Documentation</a>
+  </p><p>
+    This product is user-managed, meaning you are responsible for
+    upgrades and maintenance.
+</p>
+<div class="section">
+
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title" style="clear: both"><a name="mysql-oci-marketplace-prereqs"></a>32.1 Prerequisites to Deploying MySQL EE on Oracle Cloud Infrastructure</h2>
+</div>
+</div>
+</div>
+<p>
+      The following assumptions are made:
+</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+          You are familiar with OCI terminology. If you are new to OCI,
+          see
+          <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/baremetalintro.htm" target="_top">Getting
+          Started</a>.
+        </p></li><li class="listitem"><p>
+          You have access to a properly configured Virtual Cloud Network
+          (VCN) and subnet. For more information, see
+          <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/quickstartnetworking.htm" target="_top">Virtual
+          Networking</a>.
+        </p></li><li class="listitem"><p>
+          You have the permissions required to deploy OCI Marketplace
+          applications in a compartment of your tenancy. For more
+          information, see
+          <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm" target="_top">How
+          Policies Work</a>.
+</p></li></ul>
+</div>
+
+</div>
+<div class="section">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title" style="clear: both"><a name="mysql-oci-marketplace-deploy"></a>32.2 Deploying MySQL EE on Oracle Cloud Infrastructure</h2>
+
+</div>
+
+</div>
+
+</div>
+<p>
+      To deploy MySQL EE on Oracle Cloud Infrastructure, do the
+      following:
+</p>
+<div class="orderedlist">
+<ol class="orderedlist" type="1"><li class="listitem"><p>
+          Open the OCI Marketplace and select
+          <span class="guilabel">MySQL</span>.
+        </p><p>
+          The <span class="guilabel">MySQL</span> listing is displayed.
+        </p></li><li class="listitem"><p>
+          Click <span class="guilabel">Launch Instance</span> to begin the
+          application launch process.
+        </p><p>
+          The <span class="guilabel">Create Compute Instance</span> dialog is
+          displayed.
+        </p><p>
+          See
+          <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/launchinginstance.htm" target="_top">To
+          create a Linux instance</a> for information on how to
+          complete the fields.
+</p></li></ol>
+</div>
+<p>
+      By default, the MySQL server listens on port 3306 and is
+      configured with a single user, root.
+</p>
+<div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+
+<div class="admon-title">
+Important
+</div>
+<p>
+        When the deployment is complete, the MySQL server is started,
+        and you must connect to the compute instance, and retrieve the
+        default root password which was written to the MySQL log file.
+      </p><p>
+        See <a class="xref" href="mysql-oci-marketplace.html#mysql-oci-marketplace-connecting-ssh" title="Connecting with SSH">Connecting with SSH</a> for
+        more information.
+</p>
+</div>
+<p>
+      The following MySQL software is installed:
+</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+          MySQL Server EE
+        </p></li><li class="listitem"><p>
+          MySQL Enterprise Backup
+        </p></li><li class="listitem"><p>
+          MySQL Shell
+        </p></li><li class="listitem"><p>
+          MySQL Router
+</p></li></ul>
+</div>
+<div class="simplesect">
+<div class="titlepage">
+<div>
+<div class="simple">
+<h3 class="title"><a name="idm46360804017552"></a>MySQL Configuration</h3>
+
+</div>
+
+</div>
+
+</div>
+<p>
+        For security, the following are enabled:
+</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+            SELinux: for more information, see
+            <a class="ulink" href="https://docs.oracle.com/en/operating-systems/oracle-linux/7/admin/ol7-s1-syssec.html" target="_top">Configuring
+            and Using SELinux</a>
+          </p></li><li class="listitem"><p>
+            <code class="filename">firewalld</code>: for more information, see
+            <a class="ulink" href="https://docs.oracle.com/en/operating-systems/oracle-linux/7/admin/ol7-firewall-sec.html" target="_top">Current
+            Status and Settings of firewalld</a>
+</p></li></ul>
+</div>
+<p>
+        The following MySQL plugins are enabled:
+</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+            <code class="filename">thread_pool</code>
+          </p></li><li class="listitem"><p>
+            <code class="filename">validate_password</code>
+</p></li></ul>
+</div>
+<p>
+        On startup, the following occurs:
+</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+            MySQL Server reads <code class="filename">/etc/my.cnf</code> and all
+            files named
+            <code class="filename"><em class="replaceable"><code>*</code></em>.cnf</code> in
+            <code class="filename">/etc/my.cnf.d/</code>.
+          </p></li><li class="listitem"><p>
+            <code class="filename">/etc/my.cnf.d/perf-tuning.cnf</code> is
+            created by <code class="filename">/usr/bin/mkcnf</code> based on the
+            selected OCI shape.
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+
+<div class="admon-title">
+Note
+</div>
+<p>
+              To disable this mechanism, remove
+              <code class="filename">/etc/systemd/system/mysqld.service.d/perf-tuning.conf</code>.
+</p>
+</div>
+<p>
+            Performance tuning is configured for the following shapes:
+</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>
+                VM.Standard2.1
+              </p></li><li class="listitem"><p>
+                VM.Standard2.2
+              </p></li><li class="listitem"><p>
+                VM.Standard2.4
+              </p></li><li class="listitem"><p>
+                VM.Standard2.8
+              </p></li><li class="listitem"><p>
+                VM.Standard2.16
+              </p></li><li class="listitem"><p>
+                VM.Standard2.24
+              </p></li><li class="listitem"><p>
+                VM.Standard.E2.1
+              </p></li><li class="listitem"><p>
+                VM.Standard.E2.2
+              </p></li><li class="listitem"><p>
+                VM.Standard.E2.4
+              </p></li><li class="listitem"><p>
+                VM.Standard.E2.8
+              </p></li><li class="listitem"><p>
+                BM.Standard2.52
+</p></li></ul>
+</div>
+<p>
+            For all other shapes, the tuning for VM.Standard2.1 is used.
+</p></li></ul>
+</div>
+
+</div>
+
+</div>
+<div class="section">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title" style="clear: both"><a name="mysql-oci-marketplace-network-configuration"></a>32.3 Configuring Network Access</h2>
+
+</div>
+
+</div>
+
+</div>
+<p>
+      For information on OCI Security Rules, see
+      <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm" target="_top">Security
+      Rules</a>.
+</p>
+<div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+
+<div class="admon-title">
+Important
+</div>
+<p>
+        You must enable ingress on ports 22 (SSH) and 3306 (MySQL), and
+        optionally 33060, if you intend to use MySQL X Protocol.
+</p>
+</div>
+
+</div>
+<div class="section">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title" style="clear: both"><a name="mysql-oci-marketplace-connecting"></a>32.4 Connecting</h2>
+
+</div>
+
+</div>
+
+</div>
+<p>
+      This section describes the various connection methods for
+      connecting to the deployed MySQL server on the OCI Compute
+      Instance.
+</p>
+<div class="simplesect">
+
+<div class="titlepage">
+<div>
+
+<div class="simple">
+<h3 class="title"><a name="mysql-oci-marketplace-connecting-ssh"></a>Connecting with SSH</h3>
+</div>
+</div>
+</div>
+<p>
+        This section gives some detail on connecting from a UNIX-like
+        platform to the OCI Compute. For more information on connecting
+        with SSH, see
+        <a class="ulink" href="https://docs.oracle.com/en/cloud/iaas/compute-iaas-cloud/stcsg/accessing-oracle-linux-instance-using-ssh.html#GUID-D947E2CC-0D4C-43F4-B2A9-A517037D6C11" target="_top">Accessing
+        an Oracle Linux Instance Using SSH</a> and
+        <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/testingconnection.htm" target="_top">Connecting
+        to Your Instance</a>.
+      </p><p>
+        To connect to the Oracle Linux running on the Compute Instance
+        with SSH, run the following command:
+      </p><pre data-lang="bourne" class="programlisting">ssh opc@<em class="replaceable"><code>computeIP</code></em></pre><p>
+        where <code class="literal">opc</code> is the compute user and
+        <em class="replaceable"><code>computeIP</code></em> is the IP address of your
+        Compute Instance.
+      </p><p>
+        To find the temporary root password created for the root user,
+        run the following command:
+      </p><pre data-lang="bourne" class="programlisting">sudo grep 'temporary password' /var/log/mysqld.log</pre><p>
+        To change your default password, log in to the server using the
+        generated, temporary password, using the following command:
+        <code class="literal">mysql -uroot -p</code>. Then run the following:
+</p><pre data-lang="sql" class="programlisting">ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';</pre>
+</div>
+<div class="simplesect">
+<div class="titlepage">
+<div>
+<div class="simple">
+<h3 class="title"><a name="mysql-oci-marketplace-connecting-mysqlclient"></a>Connecting with MySQL Client</h3>
+
+</div>
+
+</div>
+
+</div>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="admon-title">
+Note
+</div>
+<p>
+          To connect from your local MySQL client, you must first create
+          on the MySQL server a user which allows remote login.
+</p>
+</div>
+<p>
+        To connect to the MySQL Server from your local MySQL client, run
+        the following command from your shell session:
+      </p><pre data-lang="bourne" class="programlisting">mysql -uroot -p -h<em class="replaceable"><code>computeIP</code></em></pre><p>
+        where <em class="replaceable"><code>computeIP</code></em> is the IP address of
+        your Compute Instance.
+</p>
+</div>
+<div class="simplesect">
+<div class="titlepage">
+<div>
+<div class="simple">
+<h3 class="title"><a name="mysql-oci-marketplace-connecting-mysqlshell"></a>Connecting with MySQL Shell</h3>
+
+</div>
+
+</div>
+
+</div>
+<p>
+        To connect to the MySQL Server from your local MySQL Shell, run
+        the following command to start your shell session:
+      </p><pre class="programlisting">mysqlsh \connect root@<em class="replaceable"><code>computeIP</code></em></pre><p>
+        where <em class="replaceable"><code>computeIP</code></em> is the IP address of
+        your Compute Instance.
+      </p><p>
+        For more information on MySQL Shell connections, see
+        <a class="ulink" href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-connections.html" target="_top">MySQL Shell Connections</a>.
+</p>
+</div>
+<div class="simplesect">
+<div class="titlepage">
+<div>
+<div class="simple">
+<h3 class="title"><a name="mysql-oci-marketplace-connecting-workbench"></a>Connecting with Workbench</h3>
+
+</div>
+
+</div>
+
+</div>
+<p>
+        To connect to the MySQL Server from MySQL Workbench, see
+        <a class="ulink" href="https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html" target="_top">Connections in MySQL Workbench</a>.
+</p>
+</div>
+
+</div>
+<div class="section">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title" style="clear: both"><a name="mysql-oci-marketplace-maintenance"></a>32.5 Maintenance</h2>
+
+</div>
+
+</div>
+
+</div>
+<p>
+      This product is user-managed, meaning you are responsible for
+      upgrades and maintenance.
+</p>
+<div class="simplesect">
+
+<div class="titlepage">
+<div>
+
+<div class="simple">
+<h3 class="title"><a name="mysql-oci-marketplace-maintenance-upgrading"></a>Upgrading MySQL</h3>
+</div>
+</div>
+</div>
+<p>
+        The existing installation is RPM-based, to upgrade the MySQL
+        server, see <a class="xref" href="installing.html#upgrade-binary-package" title="2.11.6 Upgrading MySQL Binary or Package-based Installations on Unix/Linux">Section 2.11.6, “Upgrading MySQL Binary or Package-based Installations on Unix/Linux”</a>.
+      </p><p>
+        You can use <code class="filename">scp</code> to copy the required RPM to
+        the OCI Compute Instance, or copy it from OCI Object Storage, if
+        you have configured access to it. File Storage is also an
+        option. For more information, see
+        <a class="ulink" href="https://docs.cloud.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm" target="_top">File
+        Storage and NFS</a>.
+</p>
+</div>
+<div class="simplesect">
+<div class="titlepage">
+<div>
+<div class="simple">
+<h3 class="title"><a name="mysql-oci-marketplace-maintenance-backuprestore"></a>Backup and Restore</h3>
+
+</div>
+
+</div>
+
+</div>
+<p>
+        MySQL Enterprise Backup is the preferred backup and restore
+        solution. For more information, see
+        <a class="ulink" href="https://dev.mysql.com/doc/mysql-enterprise-backup/8.0/en/meb-backup-cloud.html" target="_top">Backing Up to Cloud Storage</a>.
+      </p><p>
+        For information on MySQL Enterprise Backup, see
+        <a class="ulink" href="https://dev.mysql.com/doc/mysql-enterprise-backup/8.0/en/meb-getting-started.html" target="_top">Getting Started with MySQL Enterprise Backup</a>.
+      </p><p>
+        For information on the default MySQL backup and restore, see
+        <a class="xref" href="backup-and-recovery.html" title="Chapter 7 Backup and Recovery">Chapter 7, <i>Backup and Recovery</i></a>.
+</p>
+</div>
+
+</div>
+
+</div>
+<div class="copyright-footer">
+
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left"><a accesskey="p" href="workbench.html">Prev</a></td>
+<td width="20%" align="center"><a accesskey="u" href="">Up</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="faqs.html">Next</a></td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">Chapter 31 MySQL Workbench</td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+<td width="40%" align="right" valign="top">Appendix A MySQL 8.0 Frequently Asked Questions</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
