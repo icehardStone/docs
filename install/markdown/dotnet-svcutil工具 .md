@@ -11,6 +11,8 @@ Windows Communication Foundation (WCF) dotnet-svcutil 工具是一种 .NET Core 
 
 ## 安装 dotnet-svcutil NuGet 包作为 CLI 工具
 
+* 方式一
+
 dotnet svcutil 1.x
 
 在编辑器中打开 HelloSvcutil.csproj 项目文件，编辑 Project 元素，并使用下面的代码添加 dotnet-svcutil NuGet 包作为 CLI 工具引用
@@ -25,6 +27,12 @@ dotnet svcutil 1.x
 
 ``` Shell
 dotnet restore
+```
+
+* 方式二
+
+``` shell
+dotnet tool install dotnet-svcutil
 ```
 
 ## 演示
@@ -48,4 +56,25 @@ dotnet-svcutil http://example.com/service.svc?wsdl  #产生客户端代码从一
 | --outputDir      |  #创建文件保存的路径（默认当前路径） | -d |
 | --noLogo         |  #禁止产生版权和标志信息  | -nl |
 | --verbosity      |  #决定产生展示信息的数量, 合法的参数值为: 'Silent, Minimal, Normal, Verbose, Debug' | -v  |
-| | | |
+| --projectFile project file | #添加Client的项目文件（if any） | -pf |
+| --outputFile file | #产生文件代码的名称 Default: derived from the WSDL definition name, WSDL service name   or targetNamespace of one of the schemas. |  -o |
+| --namespace | #命名空间 - A mapping from a WSDL or XML Schema targetNamespace to a CLR namespace. Using the '*' for the targetNamespace maps all targetNamespaces without an explicit mapping to that CLR namespace. Default: derived from the target namespace of the schema document for Data Contracts. The default namespace is used for all other generated types. (Short Form: -n) |  -n |
+| --messageContract | #产生消息协议类型 | -mc |
+| --enableDataBind  | #数据绑定类型 | -edb |
+| --internal | #产生代码的类的访问修饰符为 internal，默认 public |  -i |
+| --reference package | #引用的包/项目 | -r |
+| --noTypeReuse | #禁用复用类型从项目引用中 | -ct |
+| --collectionType type | # | -ct |
+| --excludeType type | # | -et |
+| --noStdLib | #不引用标准类库,more引用Sytem.Runtime, System.ServiceModel | -nsl |
+| --serializer auto | #自动选择序列化器 | -ser |
+| --serializer DataContractSerializer | #选择序列化数据类型的序列化器 | |
+| --serializer XmlSerializzer | #生成代码的XML序列化器 | |
+| --sync | #异步代码 | -syn |
+| --runtimeIdentifier| The runtime identifier used for building reference projects (if any).| -ri |
+| --targetFramework | #The target framework used for building reference projects | -tf |
+
+
+### 参数示例
+
+![图 1-1](./images/dotnet-svcutil.png)
