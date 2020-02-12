@@ -77,3 +77,13 @@ MySQL Server maintains serveral time zone settings:
 
 * 系统时区。当服务开启，系统自动尝试去决定主机时区，使用它来设置system_time_zone 系统变量值，该值不会在此后改变。
 * 明确制定的系统时区变量值当MySQL 服务器开启时，设置TZ环境变量值，在你开启mysqld开始，如果你开启服务器使用mysqld_safe,它的--timezone选项提供另外的方式去设置系统时区。
+
+### The Server Shutdown Process
+
+服务器关闭进程会发生以下事情:
+
+* 初始化服务器关闭进程。
+这能够发生在以下几种方式。例如拥有[SHUTDOWN]('')权限的用户可以执行mysqladmin shutdown 命令。mysqladmin 能够在任何mysql支持的任何平台上使用。其他的操作系统特定的shutdown 初始化方法也能拿够正常的工作。例如在Unix操作系统上，当服务器收到SIGTERM信号时，Windows操作系统上操作任务管理器。
+
+* 如果必要，服务器会创建一个shutdown 线程。
+这依赖于shutdown是如何初始化的。服务器可能会创建一个线程去操作shutdown进程如果shutdown是被一个客户端请求的，一个shutdown 线程会被创建。如果shutdown是接受到一个SIGTERM信号的结果，该信号的线程可能会shutdown自己。
