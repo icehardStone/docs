@@ -1,4 +1,4 @@
-# begin guide
+# [begin guide](http://nginx.org/en/docs/beginners_guide.html)
 
 本结了一个基础的介绍关于nginx和描述了一些简单的任务。本结假设nginx已经被安装好在读者的机器上。
 
