@@ -21,7 +21,7 @@ events {
 ### accept_mutex
 
 ``` shell
-Syntax: accept_mutex on | off;
+Syntax: accept_mutex on | off;****
 Default: accept_mutext off;
 Context events
 ```
