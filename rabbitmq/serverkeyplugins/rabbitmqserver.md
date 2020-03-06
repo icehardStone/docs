@@ -26,6 +26,12 @@ rabbitmq-plugins enable rabbitmq_management #启动插件
 rabbitmq-plugins list #查看支持的插件
 ```
 
+### Docker 安装
+
+sudo docker pull rabbitmq:latest
+
+sudo docker run -d -p 15672:15672 -p 5672:5672 --name rabbitmq rabbitmq:latest
+
 ## CLI tools
 
 ### CLI Tools Overview

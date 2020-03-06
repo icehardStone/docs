@@ -9,7 +9,7 @@ sudo rabbitmqctl add_user admas 123456
 
 # 分配标签
 
-sudo rabbitmqctl add_user_tags <username> administrator
+sudo rabbitmqctl set_user_tags admas administrator
 
 # 主机
 

@@ -14,7 +14,7 @@ namespace sample.server1
             factory.UserName = "admas";
             factory.Password = "123456";
             factory.VirtualHost = "/";
-            factory.HostName ="localhost";
+            factory.HostName ="192.168.0.106";
             factory.Port = 5672;
 
             IConnection connection = factory.CreateConnection();
