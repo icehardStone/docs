@@ -13,9 +13,10 @@
 
 ## runtimeconfig,json
 
-构建项目时，将在输出目录中生成\[appname\].runtimconfig.json文件。如果项目文件所在的文件夹中存在runtimeconfig.template文件，它包含的任何配置选项都将合并到\[appname\].runtimcofig.json文件中，如果自行构建应用，请将所有配置选项放在runtimeconfig.template.json文件中。如果只是运行应用。请将其直接插入\[appname\].runtimeconfig.template.json文件中。
+构建项目时，将在输出目录中生成\[appname\].runtimconfig.json文件。如果项目文件所在的文件夹中存在runtimeconfig.template文件，它包含的任何配置选项都将合并到\[appname\].runtimcofig.json文件中，如果自行构建应用，请将所有配置选项放在runtimeconfig.template.json文件中。如果只是运行应用。请将其直接插入\[appname\].runtimeconfig.template.json文件中。1
 
 ### 示例[appname].runtimeconfig.template.json
+
 如果要将这些选项放在输出JSON文件中，请将他们放在runtimeOptions属性下面
 
 ``` json

@@ -12,3 +12,13 @@ Can't determine basedir from 'my_print_defaults mysqld' output: --skip-host-cach
 ``` shell
 mysqldumpslow -t 10 ./var/log/mysql_slow.log
 ```
+
+### Slow Query Log Parameters
+
+最小的和默认的[long_query_time]('')值是0和10，分别的，这个值能够被定义为毫秒。
+
+默认的，管理型的语句不会别记录，如果想启用使用参数[log_slow_admin_statements]('')参数和[log_queries_not_using_indexs]('')参数。
+
+默认的，慢查询日志是关 闭的，开启使用[slow_query_log]('')参数，定义日志文件名称为[slow_query_log_file]('')参数。
+
+如果你没有定义日志文件名称，默认的日志文件名称host_name_slow.log.该文件会被创建在data directory除非一个绝对路径被给予。
