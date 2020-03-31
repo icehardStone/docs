@@ -1,0 +1,58 @@
+[mysqld]
+disabled_storage_engines =“ MyISAM，BLACKHOLE，FEDERATED，ARCHIVE，MEMORY”
+
+server_id=1
+gtid_mode=ON
+enforce_gtid_consistency=ON
+master_info_repository=TABLE
+relay_log_info_repository=TABLE
+binlog_checksum=NONE
+log_slave_updates=ON
+log_bin=binlog
+binlog_format=ROW
+
+plugin_load_add='group_replication.so'  							#将组复制插件添加到服务器在启动时加载的插件列表中
+transaction_write_set_extraction=XXHASH64
+group_replication_group_name="aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa" #告诉插件将其加入或创建的组命名为 UUID值
+group_replication_start_on_boot=off									#变量以off指示插件在服务器启动时不自动启动操作。这在设置组复制时非常重要，因为它可以确保您可以在手动启动插件之前配置服务器。配置成员后，您可以设置
+group_replication_local_address= "s1:33061"
+group_replication_group_seeds= "s1:33061,s2:33061,s3:33061"
+group_replication_bootstrap_group=off
+
+																	#您可以使用禁用二进制日志记录SET SQL_LOG_BIN=0;，然后在每个成员上手动创建用户，如果没禁用，则不必在每个服务器上执行。
+CREATE USER rpl_user@'%' IDENTIFIED BY 'password';GRANT REPLICATION SLAVE ON *.* TO rpl_user@'%';FLUSH PRIVILEGES;
+
+
+CHANGE MASTER TO MASTER_USER='rpl_user', MASTER_PASSWORD='password' \\
+		      FOR CHANNEL 'group_replication_recovery';
+
+																	#首次启动组
+SET GLOBAL group_replication_bootstrap_group=ON;
+
+
+START GROUP_REPLICATION;
+
+SET GLOBAL group_replication_bootstrap_group=OFF;
+
+
+
+SELECT * FROM performance_schema.replication_group_members;
+SELECT * FROM performance_schema.replication_group_member_stats\G
+
+
+																	#以下示例显示了在单主模式下部署时如何找出当前哪个服务器为主服务器。
+
+mysql> SHOW STATUS LIKE 'group_replication_primary_member'
+
+
+
+
+
+
+
+
+
+
+
+
+
