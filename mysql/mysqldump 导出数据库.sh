@@ -1,0 +1,1 @@
+mysqldump.exe --defaults-file="c:\users\admas\appdata\local\temp\tmpg4zflz.cnf"  --user=root --host=192.168.8.21 --protocol=tcp --port=60090 --default-character-set=utf8 --column-statistics=0 --skip-triggers "ihdis"
