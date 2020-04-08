@@ -40,3 +40,7 @@ add=`expr 2 + 2`
 echo "the sum is ${add}"
 boolnumber=`expr true & false`
 echo "the bool is ${boolnumber}"
+
+str="this is a long long words";
+# 匹配this
+expr index "${str}" "this"  # result : 1
