@@ -33,4 +33,9 @@ context: http,server,location
 
 设置为从代理服务器读取响应所使用的缓存区数量和大小。
 
+> sample  
+> syntax: proxy_buffers number size;  
+> default: proxy_buffers 8 4k|8k;  
+> context: http,server,location  
+
 
