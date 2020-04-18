@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mds">test1</div>
+    <div id="mds2">test2</div>
+    <div id="mds3">test3</div>
+</body>
+<style type="text/css">
+        @media screen and (max-width: 400px) {
+            #mds {
+                color: red;
+            }
+        }
+        @media (orientation: landscape) {
+            #mds3 {
+                font-size: 30px;
+            }
+        }
+        @media screen and (min-width: 400px) {
+            #mds2 {
+                font-size: 16px;
+                color: green;
+            }
+        }
+</style>
+</html>

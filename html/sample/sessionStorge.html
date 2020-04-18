@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="session">
+
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            sessionStorage.setItem("userid","11010");
+            var node = document.getElementById("session");
+            node.innerText = sessionStorage.getItem("userid");
+        }
+    </script>
+</body>
+</html>

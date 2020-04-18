@@ -1,0 +1,38 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1586872867925" ID="ID_1570604344" MODIFIED="1586872906762" TEXT="web Stroge API &#x5b58;&#x50a8;&#x673a;&#x5236;">
+<node CREATED="1586872907998" ID="ID_1776333768" MODIFIED="1586872940373" POSITION="right" TEXT="&#x5b58;&#x50a8;&#x5bf9;&#x8c61; -  &#x952e;&#x503c;&#x5bf9;"/>
+<node CREATED="1586872940644" ID="ID_1024140308" MODIFIED="1586872947309" POSITION="right" TEXT="&#x5b58;&#x50a8;&#x673a;&#x5236;">
+<node CREATED="1586872947309" ID="ID_1387440597" MODIFIED="1586873027415" TEXT="localsroge  -  &#x6d4f;&#x89c8;&#x5668;&#x6253;&#x5f00;&#x540e;&#x4efb;&#x7136;&#x5b58;&#x5728;">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1586872956461" ID="ID_1550189021" MODIFIED="1586873000165" TEXT="sessionstroge - &#x5b58;&#x50a8;&#x533a;&#x57df;&#x53ea;&#x5728;&#x4f1a;&#x8bdd;&#x671f;&#x95f4;&#x53ef;&#x7528;">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+<node CREATED="1586873119653" ID="ID_148554522" MODIFIED="1586873126950" POSITION="right" TEXT="&#x65b9;&#x6cd5;">
+<node CREATED="1586873126950" ID="ID_1499821654" MODIFIED="1586873138674" TEXT="&#x83b7;&#x53d6;&#x503c;  -  getItem"/>
+<node CREATED="1586873139021" ID="ID_234964774" MODIFIED="1586873149896" TEXT="&#x8bbe;&#x7f6e;&#x503c; -  setItem"/>
+<node CREATED="1586873150670" ID="ID_1308448662" MODIFIED="1586873179729" TEXT="&#x54cd;&#x5e94;&#x5b58;&#x50a8;&#x7684;&#x53d8;&#x5316;"/>
+<node CREATED="1586873190613" ID="ID_1790309447" MODIFIED="1586873207051" TEXT="&#x5220;&#x9664;&#x5b58;&#x50a8;&#x8bb0;&#x5f55;  -  removeItem"/>
+<node CREATED="1586873207901" ID="ID_132075439" MODIFIED="1586873222011" TEXT="&#x6e05;&#x7a7a;&#x5b58;&#x50a8;&#x8bb0;&#x5f55;  -  clear"/>
+</node>
+<node CREATED="1586873227573" ID="ID_554928555" MODIFIED="1586873247245" POSITION="right" TEXT="sessionstroge &#x548c; localstroge&#x4e0d;&#x540c;&#x4e4b;&#x5904;"/>
+<node CREATED="1586873295430" ID="ID_484280173" MODIFIED="1586873302951" POSITION="right" TEXT="&#x5e94;&#x7528;&#x573a;&#x666f;">
+<node CREATED="1586873302951" ID="ID_1331597289" MODIFIED="1586873582109" TEXT="localstroge">
+<icon BUILTIN="flag-black"/>
+<node CREATED="1586873379550" ID="ID_1821445601" MODIFIED="1586873395743" TEXT="&#x7528;&#x6237;&#x81ea;&#x5b9a;&#x4e49;&#x4e3b;&#x9898;"/>
+<node CREATED="1586873396542" ID="ID_356759959" MODIFIED="1586873409151" TEXT="&#x7ba1;&#x7406;&#x8d2d;&#x7269;&#x8f66;"/>
+</node>
+<node CREATED="1586873344534" ID="ID_138161442" MODIFIED="1586873589203" TEXT="sessionstroge">
+<icon BUILTIN="flag-blue"/>
+<node CREATED="1586873421950" ID="ID_654210375" MODIFIED="1586873435795" TEXT="&#x5355;&#x9875;&#x9762;&#x83dc;&#x5355;&#x7f13;&#x5b58;"/>
+<node CREATED="1586873436518" ID="ID_747862294" MODIFIED="1586873489868" TEXT="&#x4e3a;&#x4e86;&#x4f18;&#x5316;&#x7528;&#x6237;&#x4f53;&#x9a8c;&#xff0c;&#x628a;&#x8868;&#x5355;&#x62c6;&#x5206;&#x4e3a;&#x591a;&#x4e2a;&#x5b50;&#x9875;&#x9762;&#xff0c;&#x7136;&#x540e;&#x6309;&#x7167;&#x6b65;&#x9aa4;&#x5f15;&#x5bfc;&#x7528;&#x6237;&#x586b;&#x5199;&#x3002;"/>
+</node>
+<node CREATED="1586873503375" ID="ID_335089275" MODIFIED="1586873591656" TEXT="cookie">
+<icon BUILTIN="flag-green"/>
+<node CREATED="1586873507494" ID="ID_1113164140" MODIFIED="1586873518494" TEXT="&#x6821;&#x9a8c;&#x7528;&#x6237;&#x662f;&#x5426;&#x5df2;&#x7ecf;&#x767b;&#x9646;"/>
+</node>
+</node>
+</node>
+</map>

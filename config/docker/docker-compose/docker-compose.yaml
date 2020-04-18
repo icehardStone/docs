@@ -1,0 +1,30 @@
+version "3.7"
+service:
+    nginx:
+        image: nginx:1.7
+        ports: 
+            - "3000"
+            - "3000-5000"
+            - "2010-9015:8080-8081"
+            - "6060:6060/udp"
+        command: bundle exec thin -p 3000
+        container_name: my-web-container
+        volumes: 
+            - "local/data/stroge:/container/data/stroge"
+            - "local/conf/stroge:/container/conf/stroge"
+        restart: "no/always/on-tailure/unless-stopped"
+        env_file: 
+            - a.env
+            - b.env
+        environment: 
+            - MYSQL_ROOT_PASSWORD=123456
+        labels: 
+            com.example.description:"Accounting webapp"
+            com.example.department:"Finance"
+        links: 
+            - "db"
+            - "mysql"
+        network_mode: "bridge/host/none"
+        networks:
+            - some-network
+            - other-network

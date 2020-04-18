@@ -28,7 +28,7 @@ CHANGE MASTER TO MASTER_USER='rpl_user', MASTER_PASSWORD='password' \\
 
 																	#首次启动组
 SET GLOBAL group_replication_bootstrap_group=ON;
-
+show variables like 'group_replication_bootstrap_group';
 
 START GROUP_REPLICATION;
 
@@ -45,6 +45,10 @@ SELECT * FROM performance_schema.replication_group_member_stats\G
 mysql> SHOW STATUS LIKE 'group_replication_primary_member'
 
 
+
+# 问题:
+(1), This member has more executed transactions than those present in the group. Local transactions
+	解决方法: reset master;
 
 
 

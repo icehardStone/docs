@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stroge"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        let data = {};
+        data.name = "admas";
+        data.age = 12;
+        data.birthTime = new Date().getDate();
+
+        localStorage.setItem("name",JSON.stringify(data));
+
+        let node = document.getElementById("stroge");
+        node.innerText = localStorage.getItem("name");
+    }
+</script>
+</html>
