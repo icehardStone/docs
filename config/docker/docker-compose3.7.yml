@@ -15,3 +15,6 @@ services:
     links:
       - "db"
       - "db:database"
+    volumes: 
+      - "/local/data:/container/data"
+      - "/local/conf:/container/conf"

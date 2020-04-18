@@ -30,3 +30,5 @@ GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
 要获取完整文档，请运行：info coreutils 'touch invocation'
 
 # stat 命令，查看文件或者文件夹属性属性
+
+ yum install python-devel
