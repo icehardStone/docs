@@ -1,0 +1,9 @@
+FROM mrc.microsoft.com/dotnet/ccore/aspnet:3.1
+
+COPY ./app /app
+
+WORKDIR /app
+
+LABEL version="3.1.1"
+
+ENTRYPOINT [ "dotnet","sample_app.dll" ]
