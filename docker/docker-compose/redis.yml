@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+    redis:
+        image: redis:5.0
+        port:
+            - "60010:6379"
+        comand: redis-server --appendonly  yes
+        restart: on-failure
+        labels:
+            - "com.sample.description=redis server"
+            - "com.sample.mail=1124246349@qq.com"
+        links:
+            - "db"
+        networks:
+            - my-net
