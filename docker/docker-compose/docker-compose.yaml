@@ -1,4 +1,4 @@
-version "3.7"
+version 
 service:
     nginx:
         image: nginx:1.7
@@ -19,8 +19,8 @@ service:
         environment: 
             - MYSQL_ROOT_PASSWORD=123456
         labels: 
-            com.example.description:"Accounting webapp"
-            com.example.department:"Finance"
+            -  "com.example.description=nginx webapp"
+            -  "com.example.department=Finance"
         links: 
             - "db"
             - "mysql"

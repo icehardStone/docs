@@ -1,0 +1,16 @@
+version: '3.7'
+services: 
+
+    dc_nginx: 
+        image: nginx:1.14
+        ports: 
+            - "8080:80"
+        container_name: nginx_container
+        environment: 
+            - TZ=Asia/Shanghai
+        volumes: 
+            - "/home/huhangmed/temp/conf/nginx.conf:/etc/nginx/nginx.conf"
+        restart: "on-tailure"
+        # labels: 
+        #     com.example.description:"nginx webapp"
+        #     com.example.department:"Finance"
