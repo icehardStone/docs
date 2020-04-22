@@ -1,5 +1,5 @@
 version 
-service:
+services:
     nginx:
         image: nginx:1.7
         ports: 

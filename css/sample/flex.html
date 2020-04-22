@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="headers">
+        <ul>
+            <li>首页</li>
+            <li>热门文章</li>
+            <li>参考手册</li>
+            <li>
+                <span class="displays_choice">更多选择</span>
+                <div class="displays">
+                    <ul>
+                        <li class="displays_item">mysql</li>
+                        <li class="displays_item">sql server</li>
+                        <li class="displays_item">nginx</li>
+                        <li class="displays_item">网格布局的五种方式</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content_item">1</div>
+        <div class="content_item">2</div>
+        <div class="content_item">3</div>
+    </div>
+    <div class="content">
+        <div class="content_item">1</div>
+        <div class="content_item">2</div>
+        <div class="content_item">3</div>
+    </div>
+    <div class="content">
+        <div class="content_item">1</div>
+        <div class="content_item">2</div>
+        <div class="content_item">3</div>
+    </div>
+    <div class="content_4">
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <style type="text/css">
+        #headers{
+            height: 80px;
+            border-bottom: 1px solid gray;
+        }
+        #headers> ul{
+            list-style: none;
+        }
+        #headers > ul > li {
+            display: inline-block;
+        }
+        #headers > ul > li:nth-child(1){
+            font-size: 2em;
+            padding-right: 30px;
+        }
+        #headers > ul > li:nth-child(2),ul > li:nth-child(3) {
+            padding-right: 10px;
+        }
+        .displays{
+            display: none;
+            position:absolute;
+            width: auto;
+            border: 1px solid rgb(162, 165, 168);
+
+            background-color: white;
+        }
+        .displays > ul {
+            list-style: none;
+            padding-left: 0px;
+        }
+        .displays_choice:hover ~ .displays{
+            /* background-color: red;     /* 通用兄弟节点匹配符号 */
+            display: block;
+        }
+        .displays_choice:hover{
+            color: green;
+            cursor: pointer;
+        }
+        .displays:hover{
+            display: block;
+        }
+        .displays_item{
+            padding-left: 5px;
+            padding-right: 25px;
+            height: 25px;
+            line-height: 25px;
+
+            font-size: 0.80em;
+        }
+        .displays_item:hover{
+            color: green;
+            background-color: honeydew;
+            cursor: pointer;
+        }
+        .displays_item:last-child{
+            padding-bottom: 5px;
+        }
+        .content{
+            display: flex;
+        }
+        .content_item{
+            flex: 1;
+        }
+        .content_4{
+            display: flex;
+        }
+        .content_4 > div:nth-child(1){
+            flex: 2;
+        }
+        .content_4 > div:nth-child(2){
+            flex: 1;
+        }
+    </style>
+</body>
+</html>
