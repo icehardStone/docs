@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+    <div id="redis">
+
+    </div>
+    <style type="text/css">
+        #test {
+            height: 20px;
+            background-color: aliceblue;
+            
+            transition-property: height;
+            -webkit-transition-property: height;;
+            -moz-transition-property: height;
+            -webkit-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+
+            -webkit-transition-duration: 2s;
+            -moz-transition-duration: 2s;
+            transition-duration: 2s;
+        }
+        #test:hover{
+            height: 100px;
+        }
+        #redis{
+            border-radius: 30px;
+            width: 30px;
+            height: 30px;
+            background-color: aliceblue;
+            
+            transition-property: width,height;;
+            -o-transition-property: width,height;
+            -moz-transition-property: width,height;;
+            -webkit-transition-property: width,height;;
+
+            transition-duration: 2s,2s;
+            -o-transition-duration: 2s,2s;
+            -moz-transition-duration: 2s,2s;
+            -webkit-transition-duration: 2s,2s;
+        }
+        #redis:hover{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="animated">
+
+    </div>
+   <style type="text/css">
+        #animated{
+            width:80px;
+            height: 80px;
+            background-color: aliceblue;
+
+            animation: slideright;
+            animation-duration: 2s;
+            animation-direction: alternate;
+            -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            /* animation-delay: 2s; */
+        }
+        @keyframes slideright {
+            from {
+                margin-left: 0px;
+            }
+            to {
+                margin-left: 200px;
+                transform: rotate(180deg);
+            }
+        }
+        @-webkit-keyframes slideright{
+            from {
+                margin-left: 0px;
+            }
+            to {
+                margin-left: 200px;
+                transform: rotate(180deg);
+            }
+        }
+        @-moz-keyframes slideright{
+            from {
+                margin-left: 0px;
+            }
+            to {
+                margin-left: 200px;
+                transform: rotate(180deg);
+            }
+        }
+        @-o-keyframes slideright{
+            from {
+                margin-left: 0px;
+            }
+            to {
+                margin-left: 200px;
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+</body>
+</html>
