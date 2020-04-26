@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <!-- <span>captions</span> -->
+        <div>
+            <div>11</div>
+            <div>22</div>
+        </div>
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <style type="text/css">
+        #main{
+            display: table;
+        }
+        #main > div:nth-child(1){
+            display: table-row;
+        }
+        #main > div:nth-child(1) > div{
+            display: table-cell;
+            width: 40px;
+            height: 40px;
+
+            margin-right: 10px;
+            background-color: aliceblue;
+        }
+        #main > span {
+            display: table-caption;
+            width: 120px;
+        }
+        #main > div:nth-child(2){
+            display: table-row;
+            background-color: aqua;;
+        }
+
+    </style>
+</body>
+</html>
