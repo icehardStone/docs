@@ -13,14 +13,18 @@ services:
             - "local/data/stroge:/container/data/stroge"
             - "local/conf/stroge:/container/conf/stroge"
         restart: "no/always/on-failure/unless-stopped"
+        
+        # If you have specified a Compose file with docker-compose -f FILE, paths in env_file are relative to the directory that file is in.
+        # Environment variables declared in the environment section override these values – this holds true even if those values are empty or undefined.
         env_file: 
             - a.env
             - b.env
         environment: 
             - MYSQL_ROOT_PASSWORD=123456
-        labels: 
-            -  "com.example.description=nginx webapp"
-            -  "com.example.department=Finance"
+        labels:
+            - "com.example.description=Accounting webapp"
+            - "com.example.department=Finance"
+            - "com.example.label-with-empty-value"
         links: 
             - "db"
             - "mysql"
