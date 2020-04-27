@@ -1,4 +1,4 @@
-version 
+version: "3.7"
 services:
     nginx:
         image: nginx:1.7
@@ -12,7 +12,7 @@ services:
         volumes: 
             - "local/data/stroge:/container/data/stroge"
             - "local/conf/stroge:/container/conf/stroge"
-        restart: "no/always/on-tailure/unless-stopped"
+        restart: "no/always/on-failure/unless-stopped"
         env_file: 
             - a.env
             - b.env
