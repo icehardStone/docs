@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*  Object:  Program.cs              File Date: 2020 /05 /02  14:04 :48    */
+/* Version:  */
+/*  Worker: icehardstone   Eamil: 1124246349@qq.com  */
+
+/*  File Change Record */
+
+
+using System;
 using System.Threading;
 
 namespace ThreadSychroce

@@ -4,7 +4,7 @@ sudo yum -y install epel-release
 
 sudo yum install -y python
 
-sudo yum install -y python2-pip.noarch
+sudo yum install -y python3-pip.noarch
 
 sudo yum -y install python-pip
 
@@ -23,3 +23,5 @@ pip install   -i https://mirrors.ustc.edu.cn/pypi/web/simple  ./docker_compose-1
 ————————————————
 版权声明：本文为CSDN博主「pushiqiang」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/pushiqiang/java/article/details/78682323
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U

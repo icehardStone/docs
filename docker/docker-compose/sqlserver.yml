@@ -1,14 +1,22 @@
 version: "3.7"
 services:
     sqlserver:
-        image: mcr.microsoft.com/mssql/server:2017-latest
+        image: mcr.microsoft.com/mssql/server:latest
         ports: 
             - "1433:1433"
         container_name: my_sqlserve
         restart: "on-failure"
+        user: root
+        volumes: 
+            - "/home/msqql/temp/mssql/data:/var/opt/mssql/data"
+            - "/home/msqql/temp/mssql/log:/var/opt/mssql/log"
         environment: 
-            - SA_PASSWORD=123456
+            - TZ=Asia/Shanghai
+            - SA_PASSWORD=sa123456poi
             - ACCEPT_EULA=Y
         labels: 
             -  "com.example.description=microsoft webapp"
             -  "com.example.department=Finance"
+
+
+            
