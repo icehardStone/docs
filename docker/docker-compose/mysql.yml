@@ -13,7 +13,7 @@ services:
         volumes: 
             - "/home/admas/temp/mysql/data/:/var/lib/mysql"
             - "/home/admas/temp/mysql/conf/conf.d:/etc/mysql/conf.d" # 目录 /home/admas/temp/mysql/conf/conf.d 存在
-        restart: "on-failure"
+        restart: "always"
         labels: 
             -  "com.example.description=mysql database"
             -  "com.example.department=test"

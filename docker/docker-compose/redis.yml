@@ -2,11 +2,11 @@ version: '3.7'
 
 services:
     redis:
-        image: redis:5.0
+        image: redis:latest
         port:
             - "60010:6379"
         comand: redis-server --appendonly  yes
-        restart: on-failure
+        restart: "always"
         labels:
             - "com.sample.description=redis server"
             - "com.sample.mail=1124246349@qq.com"
