@@ -7,17 +7,18 @@
 
 # 按照下列步骤设置：
 
-# 1. 在A中执行命令：
+# 1. 在A中执行命令： /root 目录下执行， 且用户为root
 
 ssh-keygen -t rsa -P ""
 # 这会在 ~/.ssh 目录下生成两个文件：id_rsa 和 id_rsa.pub
 
 #2. 拷贝A的id_rsa.pub到B：
 
-scp ~/.ssh/id_rsa.pub yliu@192.168.200.1:/home/yliu
+scp /root/.ssh/id_rsa.pub root@192.168.1.200:/root
 #3. 登录B，并把id_rsa.pub输入到B的authorized_keys文件中：
 
-cat /home/yliu/id_rsa.pub >> /home/yliu/.ssh/authorized_keys
+cd /root
+cat id_rsa.pub >> .ssh/authorized_keys
 #大功告成！此时在复制文件就无需输入密码了。而且，在A中ssh登录B也无需密码了。
 
 #反之亦然，在B中设置A的免密码登录完全一样，在此不做赘述。

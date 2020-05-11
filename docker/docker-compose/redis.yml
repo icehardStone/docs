@@ -10,7 +10,3 @@ services:
         labels:
             - "com.sample.description=redis server"
             - "com.sample.mail=1124246349@qq.com"
-        links:
-            - "db"
-        networks:
-            - my-net

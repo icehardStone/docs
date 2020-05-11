@@ -17,6 +17,4 @@ services:
         labels: 
             -  "com.example.description=microsoft webapp"
             -  "com.example.department=Finance"
-
-
             
