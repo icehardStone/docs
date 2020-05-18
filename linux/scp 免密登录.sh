@@ -10,6 +10,7 @@
 # 1. 在A中执行命令： /root 目录下执行， 且用户为root
 
 ssh-keygen -t rsa -P ""
+ssh-keygen -t rsa -P "" -f   XXX   #文件名称:  XXX
 # 这会在 ~/.ssh 目录下生成两个文件：id_rsa 和 id_rsa.pub
 
 #2. 拷贝A的id_rsa.pub到B：

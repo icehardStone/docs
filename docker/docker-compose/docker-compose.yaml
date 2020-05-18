@@ -13,12 +13,18 @@ services:
             - "local/data/stroge:/container/data/stroge"
             - "local/conf/stroge:/container/conf/stroge"
         restart: "no/always/on-failure/unless-stopped"
-        
+        deploy:
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 120s
         # If you have specified a Compose file with docker-compose -f FILE, paths in env_file are relative to the directory that file is in.
         # Environment variables declared in the environment section override these values – this holds true even if those values are empty or undefined.
         env_file: 
             - a.env
             - b.env
+        user: root
         environment: 
             - MYSQL_ROOT_PASSWORD=123456
         labels:
@@ -28,6 +34,9 @@ services:
         links: 
             - "db"
             - "mysql"
+        depends_on:
+            - redis
+            # - redis   redis 先启动后nginx才启动
         network_mode: "bridge/host/none"
         networks:
             - some-network

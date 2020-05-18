@@ -20,8 +20,23 @@ pip install   -i https://mirrors.ustc.edu.cn/pypi/web/simple  ./docker_compose-1
 
 
 #sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-————————————————
-版权声明：本文为CSDN博主「pushiqiang」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/pushiqiang/java/article/details/78682323
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
+
+
+
+# 离线安装Docker-Compose 
+
+# 在github上下载 docker-compose-Linux-x86_64
+# 下载地址:  https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64
+
+# 将下载下来的“docker-compose-Linux-x86_64”文件上传到服务器上，然后执行如下命令将其移动到 /usr/local/bin，并改名为“docker-compose”。
+
+sudo mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+
+# 添加可执行权限
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+# 命令测试是否安装成功
+docker-compose -v 
