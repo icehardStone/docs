@@ -1,0 +1,23 @@
+version: '3.1'  #"登录容器请执行:rabbitmq-plugins enable rabbitmq_management 才可>使用WEB管理页面"
+services:
+  rabbitmq:
+    image: rabbitmq:3.6.9-management
+    ports:
+      - "4369:4369"
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"
+      - "25672:25672"
+    hostname: rmq_host1
+    environment:
+      RABBITMQ_DEFAULT_VHOST: /
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+      RABBITMQ_LOGS: /var/lib/rabbitmq/rabbitmq.log
+      RABBITMQ_SASL_LOGS: /var/lib/rabbitmq/rabbitmq-sasl.log
+      RABBITMQ_ERLANG_COOKIE: LZJADKXKLULIXFKAALGX 
+      TZ: Asia/Shanghai
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+#      - /etc/hosts:/etc/hosts
+    restart: always
