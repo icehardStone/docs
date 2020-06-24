@@ -14,3 +14,8 @@
 
 # 创建了一个add_sudo文件
 # 在里面添加%sudo ALL=(ALL:ALL) NOPASSWD:ALL
+
+
+# sudo 不需要输入密码
+
+echo "$1   ALL=(ALL)    NOPASSWD:ALL"  >> /etc/sudoers    # $1 为输入用户名
