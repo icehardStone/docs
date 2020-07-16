@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    dbtwo:
+      image: ibmcom/db2:latest
+      ports:
+        - "50000:50000"
+      restart: "always"
+      environment:
+        - DB2INST1_PASSWORD=
+        - LICENSE=accept
+      labels:
+        - "com.sample.description=db2 server"
+        - "com.sample.mail=1124246349@qq.com"

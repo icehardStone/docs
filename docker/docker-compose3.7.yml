@@ -1,3 +1,5 @@
+# docker-compose file 示范例子
+
 version: "3.7"
 services: 
   redis:
@@ -18,3 +20,4 @@ services:
     volumes: 
       - "/local/data:/container/data"
       - "/local/conf:/container/conf"
+
