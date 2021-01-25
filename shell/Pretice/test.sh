@@ -45,3 +45,12 @@ then
 else
     echo "false"
 fi
+
+case  in
+ 1)
+  ;;
+ 2)
+  ;;
+ *)
+  ;;
+esac
