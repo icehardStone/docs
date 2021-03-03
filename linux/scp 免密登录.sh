@@ -32,4 +32,24 @@ cat id_rsa.pub >> .ssh/authorized_keys
 
 scp -i file-of-key file-to-copy username@XX.XXX.XX.XXX:/path/of/destination
 
+
+
+# 方法二
+# ssh-keygen
+
+# [root@localhost ~]# ssh-copy-id root@172.0.1.45
+# /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+# /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+# /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+# root@192.168.8.21's password:
+
+# Number of key(s) added: 1
+
+# Now try logging into the machine, with:   "ssh 'root@192.168.8.21'"
+# and check to make sure that only the key(s) you wanted were added.
+
+
+# 测试一下
+# [root@localhost ~]# scp ma.py  root@192.168.8.21:/root
+# ma.py  
  
