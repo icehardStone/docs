@@ -1,4 +1,8 @@
 #!/bin/bash
+
+
+# 方法一
+
 echo "loading bridge-utils-1.5-9.el7.x86_64.rpm ..................."
 sudo yum localinstall ./bridge-utils-1.5-9.el7.x86_64.rpm
 
@@ -21,6 +25,17 @@ sudo ifconfig docker0
 echo "restart docker"
 sudo systemctl restart docker
 
+# 方法二
 
+sudo vi /etc/docker/daemon.json
+# 添加内容
+# {
+#  		"bip":"172.10.0.1/16"
+# }
+
+sudo systemctl restart docker
+
+
+#
 # route add -host 192.168.1.1 dev 192.168.0.1
 # tracert www.baidu.com
