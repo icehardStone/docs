@@ -10,6 +10,8 @@ getenforce
 ##setenforce 1 设置SELinux 成为enforcing模式
 setenforce 0
 
-# 检查状态
+# 永久关闭
+# 编辑: /etc/selinux/config 文件
+设置 SELINUX=disabled
 
 # 要查看当前SELinux状态以及系统上正在使用的 SELinux 策略，可以使用 sestatus 命令：
