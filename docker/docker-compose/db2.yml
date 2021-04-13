@@ -7,7 +7,7 @@ services:
         - "50000:50000"
       restart: "always"
       environment:
-        - DB2INST1_PASSWORD=
+        - DB2INST1_PASSWORD=121221
         - LICENSE=accept
       labels:
         - "com.sample.description=db2 server"
