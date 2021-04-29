@@ -7,8 +7,8 @@ services:
             - "3000-5000"
             - "2010-9015:8080-8081"
             - "6060:6060/udp"
-        command: bundle exec thin -p 3000
-        container_name: my-web-container
+        command: /bin/bash /home/temp.sh                                        # 执行temp.sh 文件
+        container_name: my-web-container                                        # 容器名称
         volumes: 
             - "local/data/stroge:/container/data/stroge"
             - "local/conf/stroge:/container/conf/stroge"
@@ -34,10 +34,35 @@ services:
         links: 
             - "db"
             - "mysql"
+        entrypoint: ["php", "-d", "memory_limit=-1", "vendor/bin/phpunit"]
         depends_on:
             - redis
             # - redis   redis 先启动后nginx才启动
+        ulimits:
+            core: 0               # 限制生成core.* 文件， core 文件其实是内存的映像，当程序崩溃的时候，存储相应的内存信息，用于对程序进行调试。
+            nproc: 65535
+            nofile:
+                soft: 20000
+                hard: 40000
         network_mode: "bridge/host/none"
         networks:
             - some-network
             - other-network
+networks:
+  link-network:
+    name: link-network
+    external: true                  # 如果被设置为true, 制定此网络已经在docker-compose 之外已经被创建。docker-compose up 不会尝试创建他，如果他
+                                    # 不存在，则会发生错误...............
+    # driver: bridge                # 总共有四种方式 bridge/host/overlay/none
+    # driver_opts:
+    #   foo: "bar"                  # 
+    
+    labels:
+        - "add one labels"
+        - "add two labels"
+        - "add three labels"
+    ipam: 
+        driver: default
+        config:
+          - subnet: 172.0.0.12/24
+        
